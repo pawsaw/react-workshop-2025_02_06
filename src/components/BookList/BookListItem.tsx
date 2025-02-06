@@ -1,4 +1,4 @@
-import { Book } from '../domain/book';
+import { Book } from '../../domain/book';
 
 export interface BookListItemProps {
   book: Book;
