@@ -1,13 +1,22 @@
 import { AppHeader } from './components/AppHeader';
 import { BookList } from './components/BookList';
-import { exampleBooks } from './domain/book';
+import { useBooks } from './domain/book/useBooks';
 
 function App() {
+  const { books, reload } = useBooks();
+
   return (
     <>
       <div className="App">
-        <AppHeader books={exampleBooks} />
-        <BookList books={exampleBooks} />
+        <button onClick={() => reload()}>Reload</button>
+        {books ? (
+          <>
+            <AppHeader books={books} />
+            <BookList books={books} />
+          </>
+        ) : (
+          <span>Loading...</span>
+        )}
       </div>
     </>
   );
