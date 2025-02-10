@@ -1,14 +1,16 @@
 import { AppHeader } from './components/AppHeader';
 import { BookList } from './components/BookList';
 import { useBooks } from './domain/book/useBooks';
+import { usePolling } from './domain/common/usePolling';
 
 function App() {
   const { books, reload } = useBooks();
 
+  usePolling(reload);
+
   return (
     <>
       <div className="App">
-        <button onClick={() => reload()}>Reload</button>
         {books ? (
           <>
             <AppHeader books={books} />
