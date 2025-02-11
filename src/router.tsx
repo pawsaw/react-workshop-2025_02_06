@@ -3,6 +3,7 @@ import { AboutScreen } from './screens/AboutScreen';
 import { BooksScreen } from './screens/BooksScreen/BooksScreen';
 import { ErrorScreen } from './screens/ErrorScreen';
 import { App } from './App';
+import { BookDetailScreen } from './screens/BookDetailScreen';
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
       {
         path: '',
         loader: () => redirect('books'),
+      },
+      {
+        path: 'books/:isbn',
+        element: <BookDetailScreen />,
       },
       {
         path: 'books',

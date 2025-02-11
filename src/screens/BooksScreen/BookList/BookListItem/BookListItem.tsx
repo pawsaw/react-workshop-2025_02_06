@@ -1,6 +1,7 @@
 import { CSSProperties, useState } from 'react';
 import { LikeCounter } from './LikeCounter';
 import { Book } from '../../../../domain/book';
+import { Link } from 'react-router';
 
 export interface BookListItemProps {
   book: Book;
@@ -17,6 +18,7 @@ export const BookListItem = ({ book }: BookListItemProps) => {
       </div>
       <h3>{book.subtitle}</h3>
       <div className="text-meta">by {book.author}</div>
+      <Link to={`/books/${book.isbn}`}>Details</Link>
     </div>
   );
 };
