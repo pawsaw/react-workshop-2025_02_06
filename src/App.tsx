@@ -1,23 +1,22 @@
-import { AppHeader } from './components/AppHeader';
-import { BookList } from './components/BookList';
-import { useBooks } from './domain/book/useBooks';
+import { Outlet } from 'react-router';
 import { ThemeProvider } from './domain/theme';
+import { AppHeader } from './components/AppHeader';
+import { BooksProvider, useContextBooks } from './domain/book';
+
+const AppHeaderWithBooks = () => {
+  const { books } = useContextBooks();
+  return <AppHeader books={books ?? []} />;
+};
 
 function App() {
-  const { books } = useBooks();
-
   return (
     <ThemeProvider>
-      <div className="App">
-        {books ? (
-          <>
-            <AppHeader books={books} />
-            <BookList books={books} />
-          </>
-        ) : (
-          <span>Loading...</span>
-        )}
-      </div>
+      <BooksProvider>
+        <div className="App">
+          <AppHeaderWithBooks />
+          <Outlet />
+        </div>
+      </BooksProvider>
     </ThemeProvider>
   );
 }
