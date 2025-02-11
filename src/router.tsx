@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from 'react-router';
-import App from './App';
 import { AboutScreen } from './screens/AboutScreen';
-import { BooksScreen } from './screens/BooksScreen';
+import { BooksScreen } from './screens/BooksScreen/BooksScreen';
 import { ErrorScreen } from './screens/ErrorScreen';
+import { App } from './App';
 
 export const router = createBrowserRouter([
   {

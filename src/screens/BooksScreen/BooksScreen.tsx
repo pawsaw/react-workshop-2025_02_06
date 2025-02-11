@@ -1,5 +1,5 @@
-import { BookList } from '../components/BookList';
-import { useContextBooks } from '../domain/book';
+import { useContextBooks } from '../../domain/book';
+import { BookList } from './BookList';
 
 export const BooksScreen = () => {
   const { books } = useContextBooks();

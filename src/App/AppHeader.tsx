@@ -1,7 +1,7 @@
 import logo from '../assets/logo.png';
 import { Book } from '../domain/book';
 
-import { ThemeEditor } from './ThemeEditor';
+import { ThemeEditor } from '../components/ThemeEditor';
 import { useTheme } from '../domain/theme';
 
 export interface AppHeaderProps {

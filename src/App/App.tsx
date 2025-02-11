@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router';
-import { ThemeProvider } from './domain/theme';
-import { AppHeader } from './components/AppHeader';
-import { BooksProvider, useContextBooks } from './domain/book';
+import { ThemeProvider } from '../domain/theme';
+import { AppHeader } from './AppHeader';
+import { BooksProvider, useContextBooks } from '../domain/book';
 
 const AppHeaderWithBooks = () => {
   const { books } = useContextBooks();
   return <AppHeader books={books ?? []} />;
 };
 
-function App() {
+export function App() {
   return (
     <ThemeProvider>
       <BooksProvider>
@@ -20,5 +20,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;

@@ -1,6 +1,6 @@
 import { CSSProperties, useState } from 'react';
-import { Book } from '../../../domain/book';
 import { LikeCounter } from './LikeCounter';
+import { Book } from '../../../../domain/book';
 
 export interface BookListItemProps {
   book: Book;
