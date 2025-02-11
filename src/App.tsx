@@ -1,15 +1,13 @@
 import { AppHeader } from './components/AppHeader';
 import { BookList } from './components/BookList';
 import { useBooks } from './domain/book/useBooks';
-import { usePolling } from './domain/common/usePolling';
+import { ThemeProvider } from './domain/theme';
 
 function App() {
-  const { books, reload } = useBooks();
-
-  usePolling(reload);
+  const { books } = useBooks();
 
   return (
-    <>
+    <ThemeProvider>
       <div className="App">
         {books ? (
           <>
@@ -20,7 +18,7 @@ function App() {
           <span>Loading...</span>
         )}
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
