@@ -1,5 +1,4 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
-import { State } from '../../store';
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface CounterState {
   count: number;
@@ -36,4 +35,4 @@ const counterSlice = createSlice({
 export const { increment, decrement, reset } = counterSlice.actions; // Achtung: das sind die Action Creators, also Funktionen
 export const counterReducer = counterSlice.reducer;
 
-export const countSelector = (state) => state.counter.count;
+export const countSelector = (state) => state.count.count;

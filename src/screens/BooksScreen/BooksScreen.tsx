@@ -1,8 +1,9 @@
-import { useContextBooks } from '../../domain/book';
+import { useBooksRedux } from '../../domain/book';
 import { BookList } from './BookList';
 
 export const BooksScreen = () => {
-  const { books } = useContextBooks();
+  // const { books } = useContextBooks();
+  const { books } = useBooksRedux();
 
   return (
     <div className="books-screen">

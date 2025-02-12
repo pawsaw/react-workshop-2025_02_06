@@ -1,11 +1,12 @@
 import { Link, useParams } from 'react-router';
-import { useContextBooks } from '../domain/book';
+import { useBooksRedux } from '../domain/book';
 import { useMemo } from 'react';
 
 export const BookDetailScreen = () => {
   const { isbn } = useParams<{ isbn: string }>();
 
-  const { books } = useContextBooks();
+  // const { books } = useContextBooks();
+  const { books } = useBooksRedux();
   const book = useMemo(() => books?.find((book) => book.isbn === isbn), [isbn, books]);
 
   return (
