@@ -10,6 +10,10 @@ const navTargets: { to: string; label: string }[] = [
     to: '/about',
     label: 'About',
   },
+  {
+    to: '/counter',
+    label: 'Counter',
+  },
 ];
 
 export const Navbar = () => {
